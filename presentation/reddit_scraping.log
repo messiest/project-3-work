@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 NOV 2017 09:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 NOV 2017 10:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -906,7 +906,24 @@ Package pdftex.def Info: subreddit_graph.png used on input line 2.
 )
 [4
 
- <./subreddit_graph.png>] [5
+ <./subreddit_graph.png>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 69.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+) [5
 
 ] [6
 
@@ -916,24 +933,7 @@ Package pdftex.def Info: subreddit_graph.png used on input line 2.
 
 ] [9
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 128.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 128.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 128.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
-) [10
+] [10
 
 ] [11
 
@@ -953,7 +953,8 @@ thkerncmss.
 
 ] [19
 
-] [20
+]
+[20
 
 ] [21
 
@@ -962,8 +963,7 @@ thkerncmss.
 ]
 \openout4 = `reddit_scraping.vrb'.
 
-
-(./reddit_scraping.vrb) [23
+ (./reddit_scraping.vrb) [23
 
 ]
 \tf@nav=\write6
@@ -989,11 +989,11 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 18415 strings out of 492995
- 349142 string characters out of 6132704
- 421516 words of memory out of 5000000
- 21495 multiletter control sequences out of 15000+600000
- 9179 words of font info for 34 fonts, out of 8000000 for 9000
+ 18434 strings out of 492995
+ 349369 string characters out of 6132704
+ 421561 words of memory out of 5000000
+ 21508 multiletter control sequences out of 15000+600000
+ 12777 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,57p,800b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
@@ -1005,10 +1005,10 @@ r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on reddit_scraping.pdf (23 pages, 6031772 bytes).
+Output written on reddit_scraping.pdf (23 pages, 6034383 bytes).
 PDF statistics:
- 790 PDF objects out of 1000 (max. 8388607)
- 740 compressed objects within 8 object streams
+ 792 PDF objects out of 1000 (max. 8388607)
+ 742 compressed objects within 8 object streams
  51 named destinations out of 1000 (max. 500000)
  80 words of extra memory for PDF output out of 10000 (max. 10000000)
 
