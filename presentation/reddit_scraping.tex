@@ -1,0 +1,92 @@
+\documentclass[10pt,t]{beamer}
+\usetheme{PaloAlto}
+\usepackage{pythonhighlight}
+\usepackage{graphicx}
+\usecolortheme{default}
+%\usefonttheme{serif}                                              % default TeX font
+\newcommand{\bi}{\begin{itemize}}                                 % begin itemize
+\newcommand{\ei}{\end{itemize}}                                   % end itemize
+\newcommand{\be}{\begin{enumerate}}                               % begin itemize
+\newcommand{\ee}{\end{enumerate}}                                 % end itemize
+\newcommand*{\ig}[2]{{\centering\includegraphics[#1]{#2}\par}}    % include graphics
+\newcommand{\txt}{\texttt}										  % texttt
+
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{title text}{fg=black}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamercolor{section in toc}{fg=black}
+
+\title{Determinants of Social Media Engagement}
+\subtitle{An Analysis of Reddit Posts}
+\author[Messier]{Christopher Messier}
+\institute[GA]{General Assembly\\Washington, D.C.}
+\date{\today}
+
+\begin{document}
+\linespread{2}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+	\tableofcontents
+\end{frame}
+
+\begin{frame}[fragile, c]{Graph of Subreddits by User Cross Posting}
+	\ig{width=.75\textwidth}{subreddit_graph.png}
+\end{frame}
+
+
+\section{Methodology}
+\begin{frame}{Methodology}
+	Data was collected using a proprietary \texttt{python} web scraper
+	\bi 
+		\item Using \texttt{r/random} to generate a random sample of subreddits
+		\item Up to 2,500 most recent posts on each subreddit
+		\item 
+	\ei 
+\end{frame}
+
+\begin{frame}{Methodology cont.}
+	Omitted Data:
+	\bi
+		\item Posts from "AutoModerator" bot
+		\item Non-english titles
+	\ei	
+\end{frame}
+
+\begin{frame}{Methodology cont.}
+	Modelling:
+	\bi
+		\item Random Forest implemented using Apache Spark
+	\ei
+\end{frame}
+
+
+\begin{frame}{Understanding the Data}
+	\bi
+		\item TFIDF Vectorization of the title
+	\ei 
+\end{frame}
+
+\begin{frame}{Engagement Metric}
+Engagement for a post defined as:
+	\bi
+		\item The number of comments on a post, 
+		\item Weighted?
+	\ei
+\end{frame}
+
+\begin{frame}[fragile, c]{Profits Per Capita}  % image frame
+	Distribution of Comments
+	%\ig{width=1\textwidth}{profits_per_capita.png}
+\end{frame}
+
+\begin{frame}[fragile, c]  % image frame
+	\begin{center}
+		\Large{Thank You}
+	\end{center}
+\end{frame}
+
+\end{document}
