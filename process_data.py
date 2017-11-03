@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
 sampling = True
+balanced = False
 
 if __name__ == "__main__":
     print("Processing Data...\n")
@@ -33,13 +34,13 @@ if __name__ == "__main__":
     df_false = df[df['response'] == 0]
 
     sample_size = int(0.75 * len(df_true))
-
-    print(sample_size)
     if sampling:
-        df_1 = df_true.sample(n=sample_size)
-        df_0 = df_false.sample(n=sample_size)
-
-    df = pd.concat([df_1, df_0])
+        if balanced:
+            df_1 = df_true.sample(n=sample_size)
+            df_0 = df_false.sample(n=sample_size)
+            df = pd.concat([df_1, df_0])
+        else:
+            df = df.sample(n=2*sample_size)
 
     print("Number of True Observations: {}".format(df.shape))
 

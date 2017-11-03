@@ -60,7 +60,7 @@ High engagement posts will be defined as:
 		\item Binary Classification
 			\bi
 				\item High Engagement = 1
-				\item The rest = 0
+				\item Everything Else = 0
 			\ei
 		\item Determined for each subreddit
 
@@ -115,20 +115,32 @@ Reddit has several intrinsic post metrics:
 \end{frame}
 
 \begin{frame}{Omitted Data (cont.)}
-	Analysis was performed on a subsample, $n$= 363,660:
+	Analysis was performed on a subsample, $n$= 362,658:
 	\bi				
 		\item Computational Reasons
-		\item Balanced Classes
+			\bi
+				\item Limited time
+				\item Limited processing power
+				\item Effect on model selection
+			\ei
 	\ei	
 \end{frame}
 
 
-\begin{frame}{Understanding the Data}
+\begin{frame}{Natural Language Processing}
+TFIDF Vectorization of the title
 	\bi
-		\item TFIDF Vectorization of the title
-	\ei 
-\end{frame}
+		\item \underline{T}ext \underline{F}requency
+		\item \underline{I}nverse \underline{D}ocument \underline{F}requency
+		\item Approx. 2,538 word vectors
+	\ei
 
+Sentiment Analysis
+	\bi
+		\item Attempts to determine sentiment of titles from content
+	\ei
+
+\end{frame}
 
 
 \section{Models}
@@ -158,10 +170,10 @@ Measuring the effects of the content of a post
 	\bi
 		\item Used a decision tree model
 		\bi
-		\item Minutes since posting
-		\item Whether it's a question
-		\item Features outside content
-		\item Has an emoji in the title
+			\item Minutes since posting
+			\item Whether it's a question
+			\item Features outside content
+			\item Has an emoji in the title
 		\ei
 	\ei
 \end{frame}
@@ -172,14 +184,14 @@ Content Decision Tree Results
 	\begin{tabular}{l | c | c }
 		& Predicted True & Predicted False\\
 		\hline \hline
-		True & 27398 & 26740\\ 
-		False & 27166 & 27494
+		True & 89122 & 9352\\ 
+		False & 9352 & 972
 	\end{tabular}
 \end{table}
 \bi
-	\item Precision: 0.50
-	\item Recall: 0.50
-	\item F1: 0.50
+	\item Precision: 0.83
+	\item Recall: 0.83
+	\item F1: 0.83
 \ei
 \end{frame}
 
@@ -202,23 +214,26 @@ Confusion Matrix
 	\begin{tabular}{l | c | c }
 		& Predicted True & Predicted False\\
 		\hline \hline
-		True & 52569 & 1569\\ 
-		False & 53061 & 1599
+		True & 98334 & 140\\ 
+		False & 10308 & 16
 	\end{tabular}
 \end{table}
 \bi
-	\item Precision: 0.50
-	\item Recall: 0.50
-	\item F1: 0.36
+	\item Precision: 0.83
+	\item Recall: 0.90
+	\item F1: 0.86
 \ei
 \end{frame}
 
 \begin{frame}{k-Nearest Neighbors}
 Measuring the sentiment of the post title
 	\bi
-		\item Sentiment Analysis performed using \texttt{nltk}
-		\item The number of comments on a post, 
-		\item Weighted?
+		\item Full complement of features
+		\item Lazy model
+			\bi
+				\item Computationally Inefficient
+				\item Keeps all observations in memory
+			\ei
 	\ei
 \end{frame}
 
@@ -229,23 +244,27 @@ Confusion Matrix:
 	\begin{tabular}{l | c | c }
 		& Predicted True & Predicted False\\
 		\hline \hline
-		True & 32203 & 21935\\ 
-		False & 26670 & 27990
+		True & 97912 & 562\\ 
+		False & 9927 & 397
 	\end{tabular}
 \end{table}
 \bi
-	\item Precision: 0.55
-	\item Recall: 0.55
-	\item F1: 0.55
+	\item Precision: 0.86
+	\item Recall: 0.90
+	\item F1: 0.87
 \ei
 \end{frame}
 
 \begin{frame}{Random Forest}
 Measuring the sentiment of the post title
 	\bi
-		\item Sentiment Analysis performed using \texttt{nltk}
-		\item The number of comments on a post, 
-		\item Weighted?
+		\item Full complement of features
+		\item Computationally Brilliant
+		\bi
+			\item Distributable
+			\item Efficient
+			\item \textit{Accurate}
+		\ei
 	\ei
 \end{frame}
 
@@ -256,14 +275,24 @@ Confusion Matrix:
 	\begin{tabular}{l | c | c }
 		& Predicted True & Predicted False\\
 		\hline \hline
-		True & 41136 & 13002\\ 
-		False & 16322 & 38338
+		True & 96340 & 2134\\ 
+		False & 8382 & 1942
 	\end{tabular}
 \end{table}
 \bi
-	\item Precision: 0.73
-	\item Recall: 0.73
-	\item F1: 0.73
+	\item Precision: 0.88
+	\item Recall: 0.90
+	\item F1: 0.88
+\ei
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}
+As our ability to analyze and gain understandings from data grows, it leads us to some difficult problems 
+\bi
+	\item Accuracy vs. Interpretablity
+	\item Difficulty distilling information into general consumption
+	\item The article should be aimed at highlighting this gap, and help readers understand these difficulties
 \ei
 \end{frame}
 

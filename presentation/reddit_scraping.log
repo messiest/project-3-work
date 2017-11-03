@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 NOV 2017 00:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 NOV 2017 08:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -917,18 +917,18 @@ Package pdftex.def Info: subreddit_graph.png used on input line 2.
 ] [9
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 123.
+LaTeX Font Info:    Try loading font information for U+msa on input line 127.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 123.
+LaTeX Font Info:    Try loading font information for U+msb on input line 127.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 123.
+line 127.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -957,11 +957,13 @@ thkerncmss.
 
 ] [21
 
+] [22
+
 ]
 \openout4 = `reddit_scraping.vrb'.
 
 
-(./reddit_scraping.vrb) [22
+(./reddit_scraping.vrb) [23
 
 ]
 \tf@nav=\write6
@@ -973,25 +975,31 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `reddit_scraping.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 305.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 305.
  (./reddit_scraping.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
-Package rerunfilecheck Info: File `reddit_scraping.out' has not changed.
-(rerunfilecheck)             Checksum: A35A052F4200DD280785D86F68C7DDAE;128.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 305.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 305.
 
+
+Package rerunfilecheck Warning: File `reddit_scraping.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `reddit_scraping.out':
+(rerunfilecheck)             Before: A35A052F4200DD280785D86F68C7DDAE;128
+(rerunfilecheck)             After:  44179D8245EF6B143AEEC2139AD13527;173.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 18404 strings out of 492995
- 349040 string characters out of 6132704
- 421514 words of memory out of 5000000
- 21488 multiletter control sequences out of 15000+600000
- 8822 words of font info for 33 fonts, out of 8000000 for 9000
+ 18409 strings out of 492995
+ 349090 string characters out of 6132704
+ 421516 words of memory out of 5000000
+ 21489 multiletter control sequences out of 15000+600000
+ 9179 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,57p,800b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
@@ -1000,12 +1008,13 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on reddit_scraping.pdf (22 pages, 5943599 bytes).
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on reddit_scraping.pdf (23 pages, 5954526 bytes).
 PDF statistics:
- 727 PDF objects out of 1000 (max. 8388607)
- 680 compressed objects within 7 object streams
- 48 named destinations out of 1000 (max. 500000)
+ 763 PDF objects out of 1000 (max. 8388607)
+ 713 compressed objects within 8 object streams
+ 51 named destinations out of 1000 (max. 500000)
  72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
