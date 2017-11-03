@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 NOV 2017 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 NOV 2017 00:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -658,19 +658,19 @@ emedefault.sty
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/outer/beamerouterth
 emedefault.sty)))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/theme/beamerthemePa
-loAlto.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeBe
+rkeley.sty
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/outer/beamerouterth
 emesidebar.sty
 \beamer@sidebarwidth=\dimen188
 \beamer@headheight=\dimen189
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerth
-emerounded.sty)
+emerectangles.sty)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
-emeorchid.sty)
+emewhale.sty)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
-emewhale.sty))
+emeorchid.sty))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pythonhighlight/pythonhighlight.s
 ty
 Package: pythonhighlight 2017/02/09 python code highlighting; provided by Olivi
@@ -892,21 +892,21 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ]
 (./reddit_scraping.toc) [2
 
+] [3
+
 ]
 \openout4 = `reddit_scraping.vrb'.
 
  (./reddit_scraping.vrb
-<subreddit_graph.png, id=87, 2890.8pt x 2890.8pt>
+<subreddit_graph.png, id=124, 2890.8pt x 2890.8pt>
 File: subreddit_graph.png Graphic file (type png)
  <use subreddit_graph.png>
 Package pdftex.def Info: subreddit_graph.png used on input line 2.
 (pdftex.def)             Requested size: 218.05696pt x 218.03572pt.
 )
-[3
+[4
 
- <./subreddit_graph.png>] [4
-
-] [5
+ <./subreddit_graph.png>] [5
 
 ] [6
 
@@ -914,16 +914,54 @@ Package pdftex.def Info: subreddit_graph.png used on input line 2.
 
 ] [8
 
+] [9
+
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 123.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 123.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 123.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+) [10
+
+] [11
+
+] [12
+
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
+
+] [19
+
+] [20
+
+] [21
+
 ]
 \openout4 = `reddit_scraping.vrb'.
 
- (./reddit_scraping.vrb)
-[9
 
-]
-\openout4 = `reddit_scraping.vrb'.
-
- (./reddit_scraping.vrb) [10
+(./reddit_scraping.vrb) [22
 
 ]
 \tf@nav=\write6
@@ -935,13 +973,13 @@ Package pdftex.def Info: subreddit_graph.png used on input line 2.
 \tf@snm=\write8
 \openout8 = `reddit_scraping.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
  (./reddit_scraping.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
 Package rerunfilecheck Info: File `reddit_scraping.out' has not changed.
-(rerunfilecheck)             Checksum: C6E9C5720138D55F48D43A952BDCE9C6;46.
+(rerunfilecheck)             Checksum: A35A052F4200DD280785D86F68C7DDAE;128.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -949,21 +987,25 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 18308 strings out of 492995
- 347425 string characters out of 6132704
- 421473 words of memory out of 5000000
- 21435 multiletter control sequences out of 15000+600000
- 5627 words of font info for 21 fonts, out of 8000000 for 9000
+ 18404 strings out of 492995
+ 349040 string characters out of 6132704
+ 421514 words of memory out of 5000000
+ 21488 multiletter control sequences out of 15000+600000
+ 8822 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,16n,60p,800b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,16n,57p,800b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on reddit_scraping.pdf (10 pages, 5488082 bytes).
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on reddit_scraping.pdf (22 pages, 5943599 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
- 22 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 727 PDF objects out of 1000 (max. 8388607)
+ 680 compressed objects within 7 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 

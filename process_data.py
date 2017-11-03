@@ -8,7 +8,7 @@ sampling = True
 if __name__ == "__main__":
     print("Processing Data...\n")
 
-    chunks = pd.read_csv('cleaned_data/processed_data.csv', chunksize=10000)
+    chunks = pd.read_csv('cleaned_data/cleaned_data.csv', chunksize=10000)
     df = pd.concat(chunks, ignore_index=True)
     print("Data Imported")
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     df_true = df[df['response'] == 1]
     df_false = df[df['response'] == 0]
 
-    sample_size = int(0.5 * len(df_true))
+    sample_size = int(0.75 * len(df_true))
 
     print(sample_size)
     if sampling:
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     df = pd.concat([df_1, df_0])
 
-    print(df.shape)
+    print("Number of True Observations: {}".format(df.shape))
 
     print("Output Size: {}".format(df.shape[0]))
 
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     del df
 
     print('Training Data: n={}'.format(df_train.shape[0]))
-    tfidf_percent = 0.05
+    tfidf_percent = 0.1
     tfidf = TfidfVectorizer(stop_words='english',
                             strip_accents='unicode',
                             max_features=int(df_train.shape[0] * tfidf_percent))

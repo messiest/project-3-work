@@ -1,9 +1,9 @@
 \documentclass[10pt,t]{beamer}
-\usetheme{PaloAlto}
+\usetheme{Berkeley}
 \usepackage{pythonhighlight}
 \usepackage{graphicx}
-\usecolortheme{default}
-%\usefonttheme{serif}                                              % default TeX font
+\usecolortheme{whale}
+%\usefonttheme{serif}                                             % default TeX font
 \newcommand{\bi}{\begin{itemize}}                                 % begin itemize
 \newcommand{\ei}{\end{itemize}}                                   % end itemize
 \newcommand{\be}{\begin{enumerate}}                               % begin itemize
@@ -16,8 +16,8 @@
 \setbeamerfont{frametitle}{size=\large}
 \setbeamercolor{section in toc}{fg=black}
 
-\title{Determinants of Social Media Engagement}
-\subtitle{An Analysis of Reddit Posts}
+\title[Engagement]{Getting People to Engage}
+\subtitle{A Look At Reddit Posts}
 \author[Messier]{Christopher Messier}
 \institute[GA]{General Assembly\\Washington, D.C.}
 \date{\today}
@@ -33,34 +33,93 @@
 	\tableofcontents
 \end{frame}
 
+\section{Reddit}
+\begin{frame}{What is Reddit?}
+	Reddit is a large link sharing website
+	\bi 
+		\item "The front page of the internet"
+		\item Types of posts
+			\bi
+				\item Content - links, pictures, videos, articles
+				\item Self Posts - text posts by the user
+			\ei
+		\item Users share links with communities known as subreddits
+	\ei 
+\end{frame}
+
 \begin{frame}[fragile, c]{Graph of Subreddits by User Cross Posting}
 	\ig{width=.75\textwidth}{subreddit_graph.png}
 \end{frame}
 
-
 \section{Methodology}
-\begin{frame}{Methodology}
-	Data was collected using a proprietary \texttt{python} web scraper
+
+\begin{frame}{Measuring Engagement}
+High engagement posts will be defined as:
+	\bi
+		\item Posts that have the top 10\% most comments 
+		\item Binary Classification
+			\bi
+				\item High Engagement = 1
+				\item The rest = 0
+			\ei
+		\item Determined for each subreddit
+
+	\ei
+\end{frame}
+
+\begin{frame}{Why Comments?}
+Reddit has several intrinsic post metrics:
+	\bi
+		\item Upvotes/Downvotes
+			\bi
+				\item Count of other users choice to like or dislike a post
+			\ei
+		\item Rank
+			\bi
+				\item The page position of a post, determined by its popularity
+			\ei
+		\item Comments capture active engagement with the site, interaction
+	\ei
+\end{frame}
+
+
+\begin{frame}{Data Collection}
+	Data was collected during the week of 10/30/2017
 	\bi 
-		\item Using \texttt{r/random} to generate a random sample of subreddits
-		\item Up to 2,500 most recent posts on each subreddit
-		\item 
+		\item 2,923 subreddits
+		\item 1,049,005 users
+		\item 2,590,769 unique posts
+		\item 42,374,242 comments		
 	\ei 
 \end{frame}
 
-\begin{frame}{Methodology cont.}
-	Omitted Data:
+
+\begin{frame}{Data Collection (cont.)}
+	Collected using a proprietary \texttt{python} web scraper
 	\bi
-		\item Posts from "AutoModerator" bot
-		\item Non-english titles
+		\item Attempted to get the most representative sample possible
+		\item Used \texttt{r/random} to generate a random sample of subreddits
+		\item Captured up to 2,000 most recent posts per subreddit
 	\ei	
 \end{frame}
 
-\begin{frame}{Methodology cont.}
-	Modelling:
-	\bi
-		\item Random Forest implemented using Apache Spark
-	\ei
+
+\begin{frame}{Omitted Data}
+	The following data was removed/omitted:
+	\bi				
+		\item Duplicate posts
+		\item Posts from bots, such as AutoModerator
+		\item Non-english/non-ascii posts
+		\item Adult Material
+	\ei	
+\end{frame}
+
+\begin{frame}{Omitted Data (cont.)}
+	Analysis was performed on a subsample, $n$= 363,660:
+	\bi				
+		\item Computational Reasons
+		\item Balanced Classes
+	\ei	
 \end{frame}
 
 
@@ -70,17 +129,142 @@
 	\ei 
 \end{frame}
 
-\begin{frame}{Engagement Metric}
-Engagement for a post defined as:
+
+
+\section{Models}
+
+\begin{frame}{Models}
+	Modeling was performed using the \texttt{python} package \texttt{Scikit-Learn}
+	
+	Models used include:
 	\bi
+		\item Decision Trees
+		\item $k$-Nearest Neighbors
+		\item Random Forest
+	\ei
+\end{frame}
+
+\begin{frame}{Scoring}
+Models are evaluated using the following metrics:
+	\bi
+		\item Precision: \begin{equation}P = \frac{T_{p}}{T_{p} + F_{p}}\end{equation}
+		\item Recall: \begin{equation}R = \frac{T_{p}}{T_{p} + F_{n}}\end{equation}
+		\item F1:\begin{equation}F1 = \frac{2(P \times R)}{P + R}\end{equation}
+	\ei
+\end{frame}
+
+\begin{frame}{Content}
+Measuring the effects of the content of a post
+	\bi
+		\item Used a decision tree model
+		\bi
+		\item Minutes since posting
+		\item Whether it's a question
+		\item Features outside content
+		\item Has an emoji in the title
+		\ei
+	\ei
+\end{frame}
+
+\begin{frame}[c]{Content Decision Tree Results}
+Content Decision Tree Results
+\begin{table}
+	\begin{tabular}{l | c | c }
+		& Predicted True & Predicted False\\
+		\hline \hline
+		True & 27398 & 26740\\ 
+		False & 27166 & 27494
+	\end{tabular}
+\end{table}
+\bi
+	\item Precision: 0.50
+	\item Recall: 0.50
+	\item F1: 0.50
+\ei
+\end{frame}
+
+\begin{frame}{Sentiment}
+Measuring the sentiment of a post's title, using \texttt{nltk}
+	\bi
+		\item Used a decision tree model
+		\bi
+			\item Positive
+			\item Negative
+			\item Neutral scores
+		\ei
+	\ei
+\end{frame}
+
+\begin{frame}[c]{Sentiment Decision Tree Results}
+Confusion Matrix
+
+\begin{table}
+	\begin{tabular}{l | c | c }
+		& Predicted True & Predicted False\\
+		\hline \hline
+		True & 52569 & 1569\\ 
+		False & 53061 & 1599
+	\end{tabular}
+\end{table}
+\bi
+	\item Precision: 0.50
+	\item Recall: 0.50
+	\item F1: 0.36
+\ei
+\end{frame}
+
+\begin{frame}{k-Nearest Neighbors}
+Measuring the sentiment of the post title
+	\bi
+		\item Sentiment Analysis performed using \texttt{nltk}
 		\item The number of comments on a post, 
 		\item Weighted?
 	\ei
 \end{frame}
 
-\begin{frame}[fragile, c]{Profits Per Capita}  % image frame
-	Distribution of Comments
-	%\ig{width=1\textwidth}{profits_per_capita.png}
+\begin{frame}[c]{k-Nearest Neighbors Results}
+Confusion Matrix:
+
+\begin{table}
+	\begin{tabular}{l | c | c }
+		& Predicted True & Predicted False\\
+		\hline \hline
+		True & 32203 & 21935\\ 
+		False & 26670 & 27990
+	\end{tabular}
+\end{table}
+\bi
+	\item Precision: 0.55
+	\item Recall: 0.55
+	\item F1: 0.55
+\ei
+\end{frame}
+
+\begin{frame}{Random Forest}
+Measuring the sentiment of the post title
+	\bi
+		\item Sentiment Analysis performed using \texttt{nltk}
+		\item The number of comments on a post, 
+		\item Weighted?
+	\ei
+\end{frame}
+
+\begin{frame}[c]{Random Forest Results}
+Confusion Matrix:
+
+\begin{table}
+	\begin{tabular}{l | c | c }
+		& Predicted True & Predicted False\\
+		\hline \hline
+		True & 41136 & 13002\\ 
+		False & 16322 & 38338
+	\end{tabular}
+\end{table}
+\bi
+	\item Precision: 0.73
+	\item Recall: 0.73
+	\item F1: 0.73
+\ei
 \end{frame}
 
 \begin{frame}[fragile, c]  % image frame
